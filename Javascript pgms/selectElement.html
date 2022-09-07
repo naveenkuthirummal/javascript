@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ELements</title>
+
+<script type="text/javascript">
+	function getValues()
+	{
+		var name = document.getElementById('uname');
+		var psw = document.getElementById('password');
+		var email = document.getElementById('email');
+		var test = document.getElementById("test");
+		var x = document.getElementsByClassName("A");
+		document.write("<br>"+x[0].value+"<br>"+x[1].value);
+		
+		
+		if(email.value == 'a@g.com')
+		{
+			document.write("<br>Email id matches ");
+		}
+		else
+		{
+			document.writeln("<br>Email Id didn't matches");
+		}
+		details();
+		function details()
+		{
+			
+			if(psw.value.length < 6)
+			{
+				document.write("<br>PASSWORD length is too short min 6 chara required = " +psw.value);
+			}
+			
+			document.write("<br>length of the name is ="+name.value.length);
+			
+		}
+
+	}
+</script>
+</head>
+<body>
+
+<input type="text" name="name" id="uname"><br>
+<input type="password" name="psw" id="password"><br>
+<input type="email" name="email" id="email"><br>
+<button onclick="getValues()">Click Here</button>
+<br>
+
+	<input class="A" type="text" id="test" name="text">
+	<input class="A" type="text" id="test" name="text">
+
+<br>
+<p> Hai how are you !!!!!!</p>
+<br>
+</body>
+</html>

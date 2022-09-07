@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Listeners</title>
+</head>
+<body>
+<!-- inline event listner -->
+<button onclick="javascript : alert('You clicked this button');">Click here !!!</button><br>
+<button onclick="counter();">Counter click</button><span></span><br>
+<input type="text" onkeypress="search(this);" name=""><br>
+<button id="event">Event HAndler</button>
+</body>
+<script type="text/javascript">
+	var c =0;
+	function counter()
+	{
+ 		document.querySelector("span").innerHTML= "You clicked counter button "+c+++" times";
+	}
+	function search(x)
+	{
+		console.log(x.value);
+	}
+	/*it is a procedure or a function that wait for an event to occure
+	we can add multiple event for the sam element
+		->it will execuite one by one*/
+	document.getElementById("event").addEventListener('click',function(){
+		alert("call 1 Event HAndler");
+	});
+	document.getElementById("event").addEventListener('click',function(){alert('call');});
+	document.addEventListener('mousemove',function(event){
+		console.log(event.clientX+","+event.clientY);
+	})
+</script>
+</html>

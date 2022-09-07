@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+
+		setInterval(function(){
+			showtime(); 
+		},1000)
+		
+		
+		function showtime()
+		{
+
+			var dt = new Date();
+			var h = dt.getHours()%12;
+			var m = dt.getMinutes();
+			var s = dt.getSeconds();
+			
+			document.getElementById('se').innerHTML  = putZero(s);
+			document.getElementById('minute').innerHTML = putZero(m);
+			document.getElementById('hr').innerHTML = putZero(h);
+		
+		}
+		function putZero(s)
+		{
+			if(s < 10){return s='0'+s;}else{return s;}
+		}
+			
+			
+	</script>
+	
+</head>
+<body>
+	
+	
+<table>
+	<tr>
+		<th><h1>Hour</h1></th><th><h1>Min</h1></th><th><h1>sec</h1></th>
+	</tr>
+	<tr>
+		<td><span id="hr">dsd</span></td>
+		<td><span id="minute">dsd</span></td>
+		<td><span id="se">dsd</span></td>
+	</tr>
+</table>
+</body>
+
+</html>

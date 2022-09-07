@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Template</title>
+	<!-- <script type="text/javascript" src="arrowEx.js"></script> -->
+	
+</head>
+<body>
+<input type="text" name="" id="name"><br>
+<input type="text" name="" id="age"><br>
+<button id="btn">Click here for Template </button>
+<span id = 'sample'></span>
+</body>
+</html>
+
+
+	<script type="text/javascript">
+			document.getElementById("btn").addEventListener('click',()=>{
+			var name = document.getElementById('name').value;
+			var age = document.getElementById('age').value;
+			var temp = `${name} is ${age} Year old`;
+			document.getElementById('sample').innerHTML = temp; });
+			
+		
+</script>

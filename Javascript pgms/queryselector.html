@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Query Selector</title>
+	<script type="text/javascript">
+		function qrysel()
+		{
+			var x = document.querySelectorAll(".A input");//select All input inside class A
+			//alert(x.length);
+			for(var i=0;i<x.length;i++)
+			{
+				//console.log(i);
+				console.log("values of class A input types = "+x[i].value);
+			}
+			var y = document.querySelectorAll("#B input");
+			//alert(y.length);
+			for (var i =0 ;i<y.length;i++) {
+				
+				console.log("Values in id Y input Types = "+y[i].value);
+			}
+			//only select first input type value
+			var z = document.querySelector("input");
+			console.log(z.value);
+			//without id / class selecting elements
+			//it is selecting first div inputs
+			var u = document.querySelector("div > input");
+			console.log(u.value);
+			//select All Ele,ents in id email
+			var  v = document.querySelectorAll("#email");
+			for(var i=0;i<v.length;i++)
+			{
+				console.log(v[i].value);
+			}
+			//taking value from input having same id for many input indiviually(not in div)
+			var u = document.querySelector("input#email");
+			console.log(u.value);
+			//Select all input element from  div having id cat
+			var w = document.querySelectorAll("#cat input");
+			for(var i =0;i<w.length;i++)
+			{
+				console.log(w[i].value);
+			}
+
+		}
+	</script>
+</head>
+<body>
+<div class="A">
+	<input type="text" name=""><br>
+	<input type="password" name=""><br>
+	<select>
+		<option value="aRE" selected="">aREA</option>
+	</select>
+</div>
+<div id="B">
+	<input type="text" name="" ><br>
+	<button onclick ="qrysel()">Click Here !!!!</button>
+</div>
+<br>
+<input type="text" name="" id="email"><br>
+<input type="text" name="" id="email"><br>
+<select id="email">
+		<option  selected="">Email</option>
+	</select>
+
+	<div id="cat">
+			<input type="text" name="" ><br>
+<input type="text" name="" ><br>
+<select >
+		<option  selected="">Cat</option>
+	</select>
+	</div>
+</body>
+</html>

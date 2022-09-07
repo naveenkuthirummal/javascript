@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EachIN</title>
+</head>
+<script type="text/javascript">
+	eachfun();
+	function eachfun()
+	{
+		let sum =0;
+		a = new Array("a","g","b","APPLE","mango","hyper");
+		for( i in a)
+		{
+			document.write(a[i]);
+		}
+		let b = new Array(1,2,3,4,56,6,7,8,9,0);
+		for(i in b)
+		{
+			sum = sum+b[i];
+		}
+		document.write(sum);
+		b.forEach(function(value){
+			sum = sum+value;
+		});
+		document.write(sum);
+		persons =[ {"name" : "naveen ","Age":25,"gender" : "Male"},{"name" : "AP ","Age":25,"gender" : "Male"}];
+		persons.forEach(function(value){
+			document.writeln(value.name);
+		});
+		//how to fetch below objject
+		person = {"na":"an","ag":23};
+		document.write(person.na);
+		//multi dimentional array
+		var salary = [
+   ["ABC", 24, 18000],
+   ["EFG", 30, 30000],
+   ["IJK", 28, 41000],
+   ["EFG", 31, 28000],
+];
+
+for (var i = 0; i < salary.length; i++) {
+
+    // This loop is for inner-arrays
+    for (var j = 0; j < salary[i].length; j++) {
+
+        // Accessing each elements of inner-array
+        document.write( salary[i][j] ); 
+    }
+}
+
+	}
+</script>
+<body>
+
+</body>
+</html>

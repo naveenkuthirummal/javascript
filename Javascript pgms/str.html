@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <script>
+
+        strings();
+        function strings()
+        {
+            str = 'ABCDE';
+            ab = "Apple is my favirot Fruit";
+            document.writeln(str.toLowerCase());//abc
+            document.writeln(str.length);//5
+            document.writeln(str[0]);//A
+            document.write(str[2]);//C
+            document.writeln(str.substr(0,1));//A
+            document.writeln(str.substr(3,2));//DE
+            
+            document.write(ab.replace("Apple","Mango"));//Mango is my favrot Fruit
+            document.write(ab.startsWith("mango"));//false 
+            document.write(ab.endsWith("Fruit"));//TRUE Case sensitive
+            spa ="      spaces      ";
+            document.write(spa.trimLeft());
+            document.write(spa.trimRight());
+            a = "appu,anie,shaji,act";
+            b = a.split(",");//CONVERTING STRING INTO AN ARRAY  
+            document.write(typeof(b));
+            b = b.join("/");// CONVERTING ARRAY INTO A STRING
+            document.write(b);
+            
+        }
+    </script>
+</body>
+</head>
+<body>
+    
+</html>

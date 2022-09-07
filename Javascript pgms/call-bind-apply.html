@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var myobj = {
+		name : 'Sachin',
+		fname : 'Tendulkar',
+		
+	}
+	var myobj2 ={
+		name : 'sourav',
+		fname : 'Ganguly'
+	}
+	var myobj3 ={
+		name : 'Virat',
+		fname : 'Kohli'
+	}
+	//this Keyword refers the parent object
+	printName = function(){console.log(this.name+" "+this.fname)}
+	
+	//for function borrowing call method is used
+		//borrowing function name.call(object name)
+	printName.call(myobj);
+
+printAddr = function(state,place){console.log(this.name+" "+this.fname+" From "+state+" "+place)}
+printAddr.call(myobj2,'Kolkatha','edernGarden');
+
+//In apply method we passing arguments as arraylist
+	//if passing more element it will only take values according to its arguments
+printAddr.apply(myobj,["Mumbai","Maharashtra"]);
+
+
+//bind method will take the copy a function and it will store on to a variable and we can execuite it later Like beliow
+let printMyname = printAddr.bind(myobj3,'Delhi','FirozhalaKotla');
+printMyname();
+
+	
+	
+</script>
+</html>

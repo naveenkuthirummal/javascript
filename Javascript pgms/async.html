@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Async Await</title>
+</head>
+<body>
+	<h1>Availble Menu</h1>
+	<ul id="menu">
+	
+	</ul><br>
+	<button id="add">Add Menu</button><br>
+	<span id='new'></span>
+	</body>
+<script type="text/javascript">
+var menu = [{"id":1,"title":"coffe"},{"id":2,"title" : "tea"}];
+function disp()
+	{
+		document.getElementById('menu').innerHTML ='';	
+		menu.forEach(item => {
+			document.getElementById('menu').innerHTML += `<li>${item.id}-${item.title}</li>`;
+			
+		});
+	}
+document.addEventListener('onload',disp());
+document.getElementById('add').addEventListener('click',()=>{
+		add({"id":3,"title":"milk"})
+});
+/*async and await make promises easier to write
+async makes a function return a Promise
+await makes a function wait for a Promise
+we need to write async key word to the main function
+write the await keyword 
+it will tell the below function to wait up to the await function finished */
+async function add(a)	
+{
+	await menu.push(a);
+		disp();
+}
+
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arrow</title>
+	<script type="text/javascript">
+		abc();
+		function abc()
+		{
+			console.log("inside normal function ");
+		}
+		var b = function(a){console.log("anonymous function "+a);};
+		b(9);
+
+		//()=> is eqal to function();
+		
+		//one type of arrow function 
+		var c = (a,b)=>console.log(a+b);
+		c(10,11);
+
+		//if the function contains only one bodyline we can write like this
+		//here it will return the value after adding a and b
+		var c = (a,b)=>a+b;
+		console.log(c(10,10));
+
+		/*if we have only one argument*/
+		var d=g=>'returning'+g;
+		console.log(d('hai'));
+
+		/*anonymous function  empty arguments*/
+		var e = ()=>'with empty arguments';
+		console.log(e());
+
+		/*Arrow function with multiple lines*/
+		var d = (a,b)=>{ let sum = a+b; let mul = a*b; console.log('multiple line');return  sum+mul;}
+		console.log(d(10,6));
+
+		//this we can use inside setTime functions
+		()=>{console.log("Another varient of arrow function")};
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SET time interval</title>
+	<script type="text/javascript">
+		var i =1;
+		/*function will repeat in a spacific time periode 
+		for stoping in we need to call the clearInterval() function */
+	var x = setInterval(function(){
+		document.getElementById('disp').innerHTML = i;
+		i++;
+		if(i > 10)
+			clearInterval(x);
+	},100);
+	/*Perform a task after the interval*/
+	setTimeout(function(){
+		//document.getElementById('disp2').innerHTML = i;
+		abc(y);
+
+	},1000);
+	/*sending argument in anonymous functions*/
+	var y = function(i,j){
+		document.write(i);
+		alert(j);
+	}
+	function abc(h)
+	{
+		h(10,'test');
+	}
+
+	</script>
+</head>
+<body>
+<span id = 'disp'></span>
+<span id = 'disp2'></span>
+
+</body>
+</html>

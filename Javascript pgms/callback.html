@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Call Back</title>
+</head>
+<body>
+<h1>Availble Menu</h1>
+<ul id="menu">
+
+</ul><br>
+<button id="add">Add Menu</button><br>
+<span id='new'></span>
+</body>
+<script>
+	/*function which is to be executed 
+	after another function has finished execution
+	-> we can pass the function as argument*/
+	var menu = [{"id":1,"title":"coffe"},{"id":2,"title" : "tea"}];
+	
+	function disp()
+	{
+		document.getElementById('menu').innerHTML ='';	
+		menu.forEach(item => {
+			document.getElementById('menu').innerHTML += `<li>${item.id}-${item.title}</li>`;
+			
+		});
+	};
+	document.addEventListener('onload',disp());
+	document.getElementById('add').addEventListener('click',()=>{
+		add({"id":3,"title":"milk"},disp);
+
+	});
+	var add =(post,callback)=>{
+		menu.push(post);
+		callback();
+	}
+	
+</script>
+</html>

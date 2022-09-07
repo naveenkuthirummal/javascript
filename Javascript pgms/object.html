@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OBject</title>
+</head>
+<script type="text/javascript">
+	objectFun();
+
+	function objectFun()
+	{
+		//defining single object array
+		person = {"name" : "naveen ","Age":25,"gender" : "Male"};
+		document.write(person.name);
+		//Defing multidiamentional object
+		Detaile = [{"name" : "naveen ","Age":25,"gender" : "Male"},{"name" : "praveen ","Age":25,"gender" : "Male"}];
+		document.write(Detaile[1].name);
+		//for converting object into string we are using below function because object are large size 
+		str =  JSON.stringify(Detaile);
+		document.write(str);
+		//To Convert back into object we are using Parse
+		ne = JSON.parse(str);
+		console.log(ne);
+		document.write(str);
+	}
+</script>
+<body>
+
+</body>
+</html>

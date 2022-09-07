@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Promises</title>
+</head>
+<body>
+<button>Click count</button>
+</body>
+
+<script>
+var c = 0;
+var btn = document.querySelector('button');
+btn.addEventListener('click',()=>
+{
+	c++;
+	/*Promises has  2 states reslove/reject
+asynchronus action
+it is like error handling */
+	let p = new Promise((resolve, reject) => {
+
+	if (c == 5) {
+		reject()
+	} else {
+		resolve();
+	}
+
+	});
+	
+	p.then(() => {
+		console.log("inside then");
+	}).catch(() => {
+		console.log('inside catch');
+	});
+});
+/*We can add multiple promises with single catch */
+let pro = new Promise((resolve,reject)=>{
+	resolve('inside promise resolve pro');
+});
+let pro1 = 10;
+let pro2 =Promise.resolve('another way to write promises');
+
+Promise.all([pro,pro1,pro2]).then(res=>{
+	console.log(res);
+});
+
+</script>
+</html>
